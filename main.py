@@ -6,7 +6,6 @@ import os
 os.system("mode con lines=40")
 
 title="""
-
  ██░ ██ ▓█████  ██▀███   ▄████▄   █    ██  ██▓    ▓█████   ██████ 
 ▓██░ ██▒▓█   ▀ ▓██ ▒ ██▒▒██▀ ▀█   ██  ▓██▒▓██▒    ▓█   ▀ ▒██    ▒ 
 ▒██▀▀██░▒███   ▓██ ░▄█ ▒▒▓█    ▄ ▓██  ▒██░▒██░    ▒███   ░ ▓██▄   
@@ -66,7 +65,7 @@ async def test(ctx, arg):
 @bot.group(invoke_without_command=True)
 async def help(ctx):
     await ctx.message.delete()
-    embed = discord.Embed(title="Help [Pages] | Hercules Self-bot", description=f"Use {BOT_PREFIX}help <page name> for different pages.", color=0x00ff00)
+    embed = discord.Embed(title="Help [Pages] | Hercules User Utility", description=f"Use {BOT_PREFIX}help <page name> for different pages.", color=0x00ff00)
     embed.add_field(name="Malicious [Must be lowercase]", value="Message spam, server nuker, ban nuker, spam channel, delete all channels.")
     embed.add_field(name="Testing [Must be lowercase]", value="Testing commands for the self-bot.")
     await ctx.send(embed=embed)
@@ -75,7 +74,7 @@ async def help(ctx):
 @help.command()
 async def malicious(ctx):
     await ctx.message.delete()
-    embed = discord.Embed(title="Help [Malicious commands] | Hercules Self-bot", description="Use .help <page name> for different pages.", color=0x00ff00)
+    embed = discord.Embed(title="Help [Malicious commands] | Hercules User Utility", description="Use .help <page name> for different pages.", color=0x00ff00)
     embed.add_field(name=f"{BOT_PREFIX}messageSpam <Message> <Amount sent>", value="Will spam <Message> <Amount sent> times in any channel.", inline=True)
     embed.add_field(name=f"{BOT_PREFIX}nuke <Amount of channels> <Channel name>", value="Will delete all channels and creat <Amount of channels> channels name <Channel name>.", inline=True)
     embed.add_field(name=f"{BOT_PREFIX}banNuke", value=f"Bans all members except {ctx.message.author}.", inline=True)
@@ -87,7 +86,7 @@ async def malicious(ctx):
 @help.command()
 async def testing(ctx):
     await ctx.message.delete()
-    embed = discord.Embed(title="Help [Testing commands] | Hercules Self-bot", description="Use .help <page name> for different pages.", color=0x00ff00)
+    embed = discord.Embed(title="Help [Testing commands] | Hercules User Utility", description="Use .help <page name> for different pages.", color=0x00ff00)
     embed.add_field(name=f"{BOT_PREFIX}test <Message>", value="Will send <Message> in the channel used in.", inline=True)
     embed.add_field(name=f"{BOT_PREFIX}embed <title> <description> <option 1 title> <option 2 value> <embed color>", value="Creates a custom embed using the values entered.")
     await ctx.send(embed=embed)
@@ -155,4 +154,4 @@ async def embed(ctx, title="Missing title", description="Missing description", o
     await ctx.send(embed=embed)
 
 # Running the bot
-bot.run("token goes here", bot=False)
+bot.run("token here", bot=False)
